@@ -1,0 +1,504 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: #0b1020;
+
+    color: #f4f7ff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
+
+.background-shape {
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+
+.shape-one {
+    width: 350px;
+    height: 350px;
+
+    background: #6c63ff;
+
+    top: -120px;
+    left: -100px;
+}
+
+
+.shape-two {
+    width: 400px;
+    height: 400px;
+
+    background: #00c9a7;
+
+    bottom: -180px;
+    right: -100px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: min(1050px, 92%);
+
+    margin: auto;
+
+    padding: 55px 0 25px;
+
+    position: relative;
+}
+
+
+/* =========================
+   HEADER / HERO
+========================= */
+
+.hero {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.eyebrow {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8f8aff;
+
+    margin-bottom: 12px;
+}
+
+
+h1 {
+    font-size: clamp(38px, 6vw, 68px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+}
+
+
+h1 span {
+    color: #7c74ff;
+}
+
+
+.subtitle {
+    max-width: 650px;
+
+    color: #aeb7cf;
+
+    line-height: 1.7;
+
+    margin-top: 20px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   ML BADGE
+========================= */
+
+.ai-badge {
+    width: 90px;
+    height: 90px;
+
+    border: 1px solid #454d70;
+
+    background: rgba(124, 116, 255, 0.12);
+
+    border-radius: 24px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #9d98ff;
+
+    box-shadow: 0 0 40px rgba(124, 116, 255, 0.12);
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.card {
+    background: rgba(19, 26, 48, 0.88);
+
+    border: 1px solid #29324f;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(12px);
+}
+
+
+h2 {
+    font-size: 25px;
+}
+
+
+.section-text {
+    color: #8f99b4;
+
+    margin-top: 7px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 19px;
+}
+
+
+/* =========================
+   FORM FIELDS
+========================= */
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+label {
+    font-size: 13px;
+
+    color: #cbd2e6;
+
+    font-weight: 600;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 11px;
+
+    border: 1px solid #35405f;
+
+    background: #11182c;
+
+    color: #f5f7ff;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+input::placeholder {
+    color: #626c86;
+}
+
+
+/* When user clicks an input */
+
+input:focus,
+select:focus {
+    border-color: #7c74ff;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 116, 255, 0.12);
+}
+
+
+select option {
+    background: #11182c;
+}
+
+
+/* =========================
+   PREDICT BUTTON
+========================= */
+
+form > button {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #7c74ff;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+form > button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(124, 116, 255, 0.3);
+}
+
+
+form > button:disabled {
+    opacity: 0.7;
+
+    cursor: wait;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 80, 80, 0.1);
+
+    border: 1px solid rgba(255, 80, 80, 0.3);
+
+    color: #ff9b9b;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESULT SECTION
+========================= */
+
+.result {
+    text-align: center;
+
+    padding: 25px 10px 10px;
+}
+
+
+.result-label {
+    color: #8f8aff;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+#score {
+    font-size: 92px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    margin: 20px 0 12px;
+
+    color: #ffffff;
+}
+
+
+#resultText {
+    color: #aeb7cf;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   TRY AGAIN BUTTON
+========================= */
+
+.secondary-button {
+    border: 1px solid #454f70;
+
+    background: transparent;
+
+    color: #dce2f4;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+.secondary-button:hover {
+    background: #202945;
+}
+
+
+/* =========================
+   LOADING SPINNER
+========================= */
+
+.loader {
+    display: inline-block;
+
+    width: 17px;
+
+    height: 17px;
+
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+
+    vertical-align: middle;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: #69738e;
+
+    font-size: 12px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================
+   SPINNER ANIMATION
+========================= */
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding-top: 30px;
+    }
+
+
+    .hero {
+        align-items: flex-start;
+    }
+
+
+    .ai-badge {
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 20px;
+
+        border-radius: 17px;
+
+        margin-left: 15px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        padding: 23px;
+    }
+
+
+    #score {
+        font-size: 70px;
+    }
+
+}
